@@ -6,7 +6,7 @@
     <title>Kimpact Development Initiative | Official Links</title>
     <style>
         :root {
-            --bg-main: #f0f4f8; /* Elegant premium light blue backdrop */
+            --bg-main: #f0f4f8; 
             --text-dark: #0f172a;
             --text-muted: #475569;
             --navy-primary: #0a2540;
@@ -29,12 +29,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 24px;
-            overflow: hidden; /* Prevents scrollbars from showing during background animation */
+            padding: 24px; 
+            overflow: hidden; 
             position: relative;
         }
 
-        /* --- Option 1: Animated Background Engine --- */
+        /* --- Animated Background Engine --- */
         .bg-animations {
             position: fixed;
             top: 0;
@@ -45,24 +45,24 @@
             pointer-events: none;
         }
 
-        /* Floating background elements using your logo image */
         .bg-logo {
             position: absolute;
-            bottom: -800px; /* Positioned deeper due to huge asset sizes */
+            bottom: -300px;
             background-image: url('./logo.png');
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.60; /* Cranked up 5x more for bold visibility */
-            filter: grayscale(100%); /* Keeps background unified */
-            animation: floatUp 28s linear infinite;
+            opacity: 0.60;
+            filter: grayscale(100%);
+            animation: floatUp 26s linear infinite;
         }
 
-        /* Giant-scale background sizes for an elite, immersive background movement */
-        .bg-logo:nth-child(1) { left: -5%; width: 500px; height: 500px; animation-duration: 24s; animation-delay: 0s; }
-        .bg-logo:nth-child(2) { left: 20%; width: 750px; height: 750px; animation-duration: 34s; animation-delay: 5s; }
-        .bg-logo:nth-child(3) { left: 60%; width: 650px; height: 650px; animation-duration: 30s; animation-delay: 2s; }
-        .bg-logo:nth-child(4) { left: 80%; width: 400px; height: 400px; animation-duration: 22s; animation-delay: 9s; }
-        .bg-logo:nth-child(5) { left: 35%; width: 700px; height: 700px; animation-duration: 38s; animation-delay: 14s; }
+        /* Negative delays force these elements to instantly render halfway up their path on page load */
+        .bg-logo:nth-child(1) { left: 5%; width: 165px; height: 165px; animation-duration: 22s; animation-delay: -5s; }
+        .bg-logo:nth-child(2) { left: 25%; width: 250px; height: 250px; animation-duration: 32s; animation-delay: -15s; }
+        .bg-logo:nth-child(3) { left: 65%; width: 215px; height: 215px; animation-duration: 28s; animation-delay: -8s; }
+        /* These two will seamlessly emerge from the bottom shortly after */
+        .bg-logo:nth-child(4) { left: 85%; width: 135px; height: 135px; animation-duration: 20s; animation-delay: 2s; }
+        .bg-logo:nth-child(5) { left: 45%; width: 230px; height: 230px; animation-duration: 36s; animation-delay: 6s; }
 
         @keyframes floatUp {
             0% {
@@ -76,7 +76,7 @@
                 opacity: 0.60;
             }
             100% {
-                transform: translateY(-200vh) rotate(360deg);
+                transform: translateY(-140vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -94,19 +94,19 @@
         /* Profile Section */
         .profile {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 24px; 
         }
 
         .profile-img-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 24px;
+            margin-bottom: 12px; 
         }
 
-        /* Main Hero Logo Maximized */
+        /* Main Hero Logo */
         .profile-img {
-            width: 380px; /* Scaled way up to fill the container width perfectly */
-            max-width: 100%; /* Ensures it stays clean and bounded on small screens */
+            width: 380px;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
             transition: var(--transition-smooth);
@@ -122,7 +122,7 @@
             color: var(--navy-primary);
             letter-spacing: -0.5px;
             line-height: 1.25;
-            margin-bottom: 8px;
+            margin-bottom: 6px; 
         }
 
         .profile p {
@@ -136,10 +136,9 @@
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px; 
         }
 
-        /* Repaired Link Style Definition */
         .link-card {
             display: flex;
             justify-content: center;
@@ -147,7 +146,7 @@
             padding: 18px 24px;
             text-decoration: none;
             color: var(--text-dark);
-            background-color: #ffffff; /* Solid white card for premium contrast */
+            background-color: #ffffff;
             border: 1.5px solid var(--text-dark);
             border-radius: 12px;
             font-weight: 600;
@@ -159,7 +158,6 @@
             overflow: hidden;
         }
 
-        /* Elevated Hover Experience */
         .link-card:hover {
             background-color: var(--navy-primary);
             border-color: var(--navy-primary);
@@ -173,9 +171,8 @@
             box-shadow: 0 4px 12px rgba(10, 37, 64, 0.1);
         }
 
-        /* Clean Footer Markings */
         footer {
-            margin-top: 64px;
+            margin-top: 48px; 
             text-align: center;
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -183,7 +180,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* Page Loading Animation Entry */
         @keyframes fadeInPage {
             to {
                 opacity: 1;
@@ -194,7 +190,6 @@
 </head>
 <body>
 
-    <!-- Animated Floating Logo Elements -->
     <div class="bg-animations">
         <div class="bg-logo"></div>
         <div class="bg-logo"></div>
@@ -204,7 +199,6 @@
     </div>
 
     <div class="container">
-        <!-- Profile Header -->
         <div class="profile">
             <div class="profile-img-wrapper">
                 <img class="profile-img" src="./logo.png" alt="Kimpact Development Initiative Logo">
@@ -213,7 +207,6 @@
             <p>Follow our social media pages here</p>
         </div>
 
-        <!-- Social Navigation Links -->
         <div class="links-container">
             <a href="https://www.facebook.com/share/193ty2sscQ/" target="_blank" class="link-card">Facebook</a>
             <a href="https://www.instagram.com/kimpact_global" target="_blank" class="link-card">Instagram</a>
@@ -222,7 +215,6 @@
             <a href="https://www.linkedin.com/company/kimpactglobal/" target="_blank" class="link-card">LinkedIn</a>
         </div>
 
-        <!-- Footer -->
         <footer>
             &copy; 2026 Kimpact Development Initiative.
         </footer>
