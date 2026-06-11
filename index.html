@@ -48,21 +48,21 @@
         /* Floating background elements using your logo image */
         .bg-logo {
             position: absolute;
-            bottom: -150px;
-            background-image: url('./logo.png'); /* Pulls your uploaded repository logo automatically */
+            bottom: -250px;
+            background-image: url('./logo.png');
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.04; /* Keeps them subtly translucent so they don't distract */
+            opacity: 0.12; /* Increased from 0.04 to make them much more distinct */
             filter: grayscale(100%); /* Keeps background unified */
-            animation: floatUp 22s linear infinite;
+            animation: floatUp 24s linear infinite;
         }
 
-        /* Different sizing and positioning variations for a natural drift feel */
-        .bg-logo:nth-child(1) { left: 10%; width: 90px; height: 90px; animation-duration: 20s; animation-delay: 0s; }
-        .bg-logo:nth-child(2) { left: 30%; width: 140px; height: 140px; animation-duration: 26s; animation-delay: 4s; }
-        .bg-logo:nth-child(3) { left: 75%; width: 110px; height: 110px; animation-duration: 22s; animation-delay: 2s; }
-        .bg-logo:nth-child(4) { left: 85%; width: 70px; height: 70px; animation-duration: 18s; animation-delay: 8s; }
-        .bg-logo:nth-child(5) { left: 50%; width: 120px; height: 120px; animation-duration: 28s; animation-delay: 11s; }
+        /* Scaled up the sizes significantly for a more premium, bold effect */
+        .bg-logo:nth-child(1) { left: 5%; width: 160px; height: 160px; animation-duration: 22s; animation-delay: 0s; }
+        .bg-logo:nth-child(2) { left: 25%; width: 220px; height: 220px; animation-duration: 28s; animation-delay: 4s; }
+        .bg-logo:nth-child(3) { left: 70%; width: 190px; height: 190px; animation-duration: 25s; animation-delay: 2s; }
+        .bg-logo:nth-child(4) { left: 85%; width: 130px; height: 130px; animation-duration: 19s; animation-delay: 7s; }
+        .bg-logo:nth-child(5) { left: 45%; width: 200px; height: 200px; animation-duration: 32s; animation-delay: 11s; }
 
         @keyframes floatUp {
             0% {
@@ -70,13 +70,13 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.04;
+                opacity: 0.12; /* Matches the new visible opacity scale */
             }
             90% {
-                opacity: 0.04;
+                opacity: 0.12;
             }
             100% {
-                transform: translateY(-120vh) rotate(360deg);
+                transform: translateY(-130vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -103,16 +103,16 @@
             margin-bottom: 24px;
         }
 
-        /* Main Logo Scaled Up */
+        /* Main Logo Scaled Up Considerably */
         .profile-img {
-            width: 165px; /* Increased from 120px for a more striking, prominent presence */
+            width: 220px; /* Increased from 165px for an authoritative presence */
             height: auto;
             object-fit: contain;
             transition: var(--transition-smooth);
         }
 
         .profile:hover .profile-img {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .profile h1 {
@@ -205,8 +205,7 @@
         <!-- Profile Header -->
         <div class="profile">
             <div class="profile-img-wrapper">
-                <!-- If you named your logo file in your repo something other than logo.png, fix this src line -->
-                <img class="profile-img" src="logo.png" alt="Kimpact Development Initiative Logo">
+                <img class="profile-img" src="./logo.png" alt="Kimpact Development Initiative Logo">
             </div>
             <h1>Kimpact Development Initiative</h1>
             <p>Follow our social media pages here</p>
@@ -218,7 +217,7 @@
             <a href="https://www.instagram.com/kimpact_global" target="_blank" class="link-card">Instagram</a>
             <a href="https://x.com/Kimpact_Global" target="_blank" class="link-card">X (Formerly Twitter)</a>
             <a href="https://www.tiktok.com/@kimpactglobal" target="_blank" class="link-card">TikTok</a>
-            <a href="https://www.linkedin.com/company/kimpactglobal/" target="_blank" class="link-blank" class="link-card">LinkedIn</a>
+            <a href="https://www.linkedin.com/company/kimpactglobal/" target="_blank" class="link-card">LinkedIn</a>
         </div>
 
         <!-- Footer -->
