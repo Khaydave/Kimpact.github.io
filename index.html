@@ -48,21 +48,21 @@
         /* Floating background elements using your logo image */
         .bg-logo {
             position: absolute;
-            bottom: -250px;
+            bottom: -800px; /* Positioned deeper due to huge asset sizes */
             background-image: url('./logo.png');
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.12; /* Increased from 0.04 to make them much more distinct */
+            opacity: 0.60; /* Cranked up 5x more for bold visibility */
             filter: grayscale(100%); /* Keeps background unified */
-            animation: floatUp 24s linear infinite;
+            animation: floatUp 28s linear infinite;
         }
 
-        /* Scaled up the sizes significantly for a more premium, bold effect */
-        .bg-logo:nth-child(1) { left: 5%; width: 160px; height: 160px; animation-duration: 22s; animation-delay: 0s; }
-        .bg-logo:nth-child(2) { left: 25%; width: 220px; height: 220px; animation-duration: 28s; animation-delay: 4s; }
-        .bg-logo:nth-child(3) { left: 70%; width: 190px; height: 190px; animation-duration: 25s; animation-delay: 2s; }
-        .bg-logo:nth-child(4) { left: 85%; width: 130px; height: 130px; animation-duration: 19s; animation-delay: 7s; }
-        .bg-logo:nth-child(5) { left: 45%; width: 200px; height: 200px; animation-duration: 32s; animation-delay: 11s; }
+        /* Giant-scale background sizes for an elite, immersive background movement */
+        .bg-logo:nth-child(1) { left: -5%; width: 500px; height: 500px; animation-duration: 24s; animation-delay: 0s; }
+        .bg-logo:nth-child(2) { left: 20%; width: 750px; height: 750px; animation-duration: 34s; animation-delay: 5s; }
+        .bg-logo:nth-child(3) { left: 60%; width: 650px; height: 650px; animation-duration: 30s; animation-delay: 2s; }
+        .bg-logo:nth-child(4) { left: 80%; width: 400px; height: 400px; animation-duration: 22s; animation-delay: 9s; }
+        .bg-logo:nth-child(5) { left: 35%; width: 700px; height: 700px; animation-duration: 38s; animation-delay: 14s; }
 
         @keyframes floatUp {
             0% {
@@ -70,13 +70,13 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.12; /* Matches the new visible opacity scale */
+                opacity: 0.60;
             }
             90% {
-                opacity: 0.12;
+                opacity: 0.60;
             }
             100% {
-                transform: translateY(-130vh) rotate(360deg);
+                transform: translateY(-200vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -103,16 +103,17 @@
             margin-bottom: 24px;
         }
 
-        /* Main Logo Scaled Up Considerably */
+        /* Main Hero Logo Maximized */
         .profile-img {
-            width: 220px; /* Increased from 165px for an authoritative presence */
+            width: 380px; /* Scaled way up to fill the container width perfectly */
+            max-width: 100%; /* Ensures it stays clean and bounded on small screens */
             height: auto;
             object-fit: contain;
             transition: var(--transition-smooth);
         }
 
         .profile:hover .profile-img {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .profile h1 {
@@ -138,6 +139,7 @@
             gap: 16px;
         }
 
+        /* Repaired Link Style Definition */
         .link-card {
             display: flex;
             justify-content: center;
