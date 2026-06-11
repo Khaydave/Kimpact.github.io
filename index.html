@@ -10,7 +10,6 @@
             --text-dark: #0f172a;
             --text-muted: #475569;
             --navy-primary: #0a2540;
-            --border-soft: #e2e8f0;
             --card-shadow: rgba(10, 37, 64, 0.04);
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -31,19 +30,55 @@
             align-items: center;
             min-height: 100vh;
             padding: 40px 24px;
-            overflow-x: hidden;
+            overflow: hidden; /* Prevents scrollbars from showing during background animation */
+            position: relative;
         }
 
-        /* Ambient light accent glow overlay */
-        body::before {
-            content: '';
+        /* --- Option 1: Animated Background Engine --- */
+        .bg-animations {
             position: fixed;
-            top: -10%;
-            left: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255,255,255,0) 70%);
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Floating background elements using your logo image */
+        .bg-logo {
+            position: absolute;
+            bottom: -150px;
+            background-image: url('logo.png'); /* Pulls your uploaded repository logo automatically */
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.04; /* Keeps them subtly translucent so they don't distract */
+            filter: grayscale(100%); /* Keeps background unified */
+            animation: floatUp 22s linear infinite;
+        }
+
+        /* Different sizing and positioning variations for a natural drift feel */
+        .bg-logo:nth-child(1) { left: 10%; width: 90px; height: 90px; animation-duration: 20s; animation-delay: 0s; }
+        .bg-logo:nth-child(2) { left: 30%; width: 140px; height: 140px; animation-duration: 26s; animation-delay: 4s; }
+        .bg-logo:nth-child(3) { left: 75%; width: 110px; height: 110px; animation-duration: 22s; animation-delay: 2s; }
+        .bg-logo:nth-child(4) { left: 85%; width: 70px; height: 70px; animation-duration: 18s; animation-delay: 8s; }
+        .bg-logo:nth-child(5) { left: 50%; width: 120px; height: 120px; animation-duration: 28s; animation-delay: 11s; }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.04;
+            }
+            90% {
+                opacity: 0.04;
+            }
+            100% {
+                transform: translateY(-120vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         .container {
@@ -52,6 +87,8 @@
             opacity: 0;
             transform: translateY(12px);
             animation: fadeInPage 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            position: relative;
+            z-index: 10;
         }
 
         /* Profile Section */
@@ -63,19 +100,19 @@
         .profile-img-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
-        /* Cleaned Logo Styling - No circles, borders, or background colors */
+        /* Main Logo Scaled Up */
         .profile-img {
-            width: 120px; /* Increased slightly since the border padding is gone */
-            height: auto;  /* Allows the logo to maintain its natural proportions */
+            width: 165px; /* Increased from 120px for a more striking, prominent presence */
+            height: auto;
             object-fit: contain;
             transition: var(--transition-smooth);
         }
 
         .profile:hover .profile-img {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .profile h1 {
@@ -108,7 +145,7 @@
             padding: 18px 24px;
             text-decoration: none;
             color: var(--text-dark);
-            background-color: #ffffff; /* Solid white background for clear readability */
+            background-color: #ffffff; /* Solid white card for premium contrast */
             border: 1.5px solid var(--text-dark);
             border-radius: 12px;
             font-weight: 600;
@@ -129,7 +166,6 @@
             box-shadow: 0 10px 25px rgba(10, 37, 64, 0.15);
         }
 
-        /* Active click compression feel */
         .link-card:active {
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(10, 37, 64, 0.1);
@@ -156,11 +192,20 @@
 </head>
 <body>
 
+    <!-- Animated Floating Logo Elements -->
+    <div class="bg-animations">
+        <div class="bg-logo"></div>
+        <div class="bg-logo"></div>
+        <div class="bg-logo"></div>
+        <div class="bg-logo"></div>
+        <div class="bg-logo"></div>
+    </div>
+
     <div class="container">
         <!-- Profile Header -->
         <div class="profile">
             <div class="profile-img-wrapper">
-                <!-- Swap with 'logo.png' once added to your GitHub repository folder -->
+                <!-- If you named your logo file in your repo something other than logo.png, fix this src line -->
                 <img class="profile-img" src="logo.png" alt="Kimpact Development Initiative Logo">
             </div>
             <h1>Kimpact Development Initiative</h1>
@@ -173,7 +218,7 @@
             <a href="https://www.instagram.com/kimpact_global" target="_blank" class="link-card">Instagram</a>
             <a href="https://x.com/Kimpact_Global" target="_blank" class="link-card">X (Formerly Twitter)</a>
             <a href="https://www.tiktok.com/@kimpactglobal" target="_blank" class="link-card">TikTok</a>
-            <a href="https://www.linkedin.com/company/kimpactglobal/" target="_blank" class="link-card">LinkedIn</a>
+            <a href="https://www.linkedin.com/company/kimpactglobal/" target="_blank" class="link-blank" class="link-card">LinkedIn</a>
         </div>
 
         <!-- Footer -->
